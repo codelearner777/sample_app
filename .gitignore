@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore email credential
+#/config/local_env.yml
+# Ignore application configuration
+/config/application.yml
