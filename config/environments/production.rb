@@ -70,9 +70,9 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'mail.google.com',
-    :user_name            => ENV['MY_EMAIL'], # I put my my email which I used regularly here.
-    :password             => ENV['MY_APP_ID'], # I put the password here.
+    :domain               => 'rocky-badlands-7040.herokuapp.com',
+    :user_name            => ENV['GMAIL_USERNAME'], # I put my my email which I used regularly here.
+    :password             => ENV['GMAIL_PASSWORD'], # I put the password here.
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }

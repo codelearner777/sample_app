@@ -16,14 +16,15 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'mail.google.com',
-    :user_name            => ENV['MY_EMAIL'], # I put my my email which I used regularly here.
-    :password             => ENV['MY_APP_ID'], # I put the password here.
+    :user_name            => ENV['GMAIL_USERNAME'], # I put my my email which I used regularly here.
+    :password             => ENV['GMAIL_PASSWORD'], # I put the password here.
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
