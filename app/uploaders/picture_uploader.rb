@@ -7,29 +7,14 @@ class PictureUploader < CarrierWave::Uploader::Base
   
    include CarrierWave::MiniMagick
    process resize_to_limit: [400, 400]
-  #include Cloudinary::CarrierWave
-    
-
-   # process :tags => ['post_picture']
-
-#   version :standard do
-#    process :resize_to_fill => [200, 300, :north]
-#  end
-
-#  version :thumbnail do
-#    resize_to_fit(50,50)
-#  end
-
-#  def public_id
-#    return model.short_name
-#  end
+   include Cloudinary::CarrierWave
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     #storage :cloudinary
      storage :fog
   else
-    storage :file
+    storage :fog
   end
 
 

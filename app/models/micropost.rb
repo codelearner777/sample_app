@@ -7,7 +7,6 @@ class Micropost < ActiveRecord::Base
   validate  :picture_size
 
   private
-
   # Validates the size of an uploaded picture.
   def picture_size
   	if picture.size > 5.megabytes
